@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            text-align: center;
+        }
+        #canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas" width="800" height="500"></canvas>
+
+
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+
+    var pen = $('#canvas')[0].getContext('2d');
+    pen.beginPath();
+    var img = new Image();
+
+    var i = 0;
+    var dis = 0;
+    setInterval(function () {
+        i = i + 1;
+        if(i > 8){
+            i = 0;
+        }
+        img.src = 'img/q_r'+i+'.jpg';
+
+        img.onload = function () {
+            pen.beginPath();
+            pen.clearRect(0,0,800,500);
+            pen.drawImage(img,dis,150,138,81);
+            pen.fill();
+        };
+        dis = dis + 20;
+        if(dis === 800){
+            dis = -100;
+        }
+    },100)
+
+
+</script>
+
+
+</body>
+
+
+
+
+</html>

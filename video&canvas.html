@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            text-align: center;
+        }
+        #btnCon{
+            width: 200px;
+            height: 50px;
+            margin: 0 auto;
+        }
+        #btnCon>div:first-child{
+            margin-right: 10px;
+        }
+        .start,.pause{
+            width: 90px;
+            height: 100%;
+            background-color:  deepskyblue;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            transition: 1s;
+        }
+        #btnCon > div:hover{
+            background-color: white;
+            color: deepskyblue;
+            cursor: pointer;
+        }
+        #video{
+            display: none;
+        }
+        #canvas{
+            border: 1px solid;
+            background-image: url("img/timg.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .loadBar{
+            width: 502px;
+            margin: -5px auto 10px;
+            height: 30px;
+            position: relative;
+        }
+        .loaded{
+            width: 0px;
+            height: 30px;
+            background-color: #B4E2FF;
+        }
+        #numLoad{
+            position: absolute;
+            top: 46%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<video src="media/demo.mp4" width="500" preload="auto" id="video"></video>
+
+<canvas id="canvas" width="500" height="300"></canvas>
+
+<div class="loadBar">
+    <div class="loaded">
+
+    </div>
+    <div id="numLoad">
+
+    </div>
+</div>
+
+
+
+<div id="btnCon">
+    <div class="start">开始</div>
+    <div class="pause">暂停</div>
+</div>
+
+
+<div>
+    <input type="text">
+    <input type="submit">
+</div>
+
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+
+    var video = $('#video')[0];
+    var pen = $('#canvas')[0].getContext('2d');
+    var dis = 501;
+    var content;
+    var contentArr = ['弹幕1','弹幕2','弹幕3'];
+    var i = 3;
+    var userInput = '';
+    // 获取弹幕字体
+    $(':input:submit').on('click',function () {
+        var text = $(':input:text');
+        content = text.val();
+        if(content.trim()){
+            i = i + 1;
+            contentArr.push(content);
+        }
+        var ranNum = Math.floor(Math.random()*i);
+        userInput = contentArr[ranNum];
+        contentArr.splice(ranNum,1);
+        i = i -1;
+        console.log(contentArr);
+    });
+
+    $('.start').on('click',function () {
+        $('#video')[0].play();
+        audio();
+    })
+    $('.pause').on('click',function () {
+        $('#video')[0].pause();
+    })
+
+
+    function audio() {
+        //把视频当做一帧一帧的图放到canvas上
+        setInterval(function () {
+            pen.beginPath();
+            pen.drawImage(video,0,0,500,300);
+            pen.fill();
+
+        // 画一个类似于弹幕的矩形
+            pen.beginPath();
+            pen.rect(0,0,500,50);
+            pen.fillStyle = 'transparent';
+            pen.fill();
+
+
+            // 把弹幕子放在弹幕矩形上
+            pen.beginPath();
+            pen.fillStyle = 'white';
+            pen.font = 'bold 30px 黑体';
+            pen.fillText(''+userInput+'',dis,35);
+            pen.fill();
+
+            dis = dis -5;
+
+            if(dis < -100){
+                dis = 501;
+            }
+        },34)
+    }
+
+
+    // 播放时触发, 进度条
+    $('#video').on('timeupdate',function () {
+        var duration = video.duration;
+        var pastTime = video.currentTime;
+
+        var rate = pastTime/duration;
+
+        $('#numLoad').html(Math.floor(rate*100)+'%');
+        $('.loaded').css('width',''+rate * 500+'');
+    })
+
+</script>
+
+
+
+</body>
+</html>

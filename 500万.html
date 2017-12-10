@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            text-align: center;
+        }
+        #canvas{
+            border:1px solid black;
+
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas" width="800" height="500"></canvas>
+
+
+
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+
+    var imgStore = ['img/500.jpg','img/1000.PNG','img/1114.PNG','img/6452.PNG'];
+    var rnum = Math.floor(Math.random()*4);
+
+    $('#canvas').css('background-image','url("'+imgStore[rnum]+'")');
+
+    var pen = $('#canvas')[0].getContext('2d');
+
+    // 目标元素
+    pen.beginPath();
+    pen.rect(0,0,800,500);
+    pen.fillStyle = 'gray';
+    pen.fill();
+
+    // 设置源元素与目标元素交互位置透明，其他区域为目标元素色
+    pen.globalCompositeOperation = 'destination-out';
+
+    $('#canvas').on('mousemove',function () {
+        var eve = event||window.event;
+        var x = eve.offsetX;
+        var y = eve.offsetY;
+        // 源元素
+        pen.beginPath();
+        pen.arc(x,y,30,0,2*Math.PI);
+        pen.fillStyle = 'red';
+        pen.fill()
+    })
+</script>
+
+</body>
+</html>
