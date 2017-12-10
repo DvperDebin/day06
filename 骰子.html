@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: #dddddd;
+        }
+        .container{
+            width: 1400px;
+            height: 200px;
+            background-color: white;
+            margin: 200px auto;
+        }
+        .wrap{
+            padding: 25px 250px;
+            display: flex;
+            width: 900px;
+            height: 150px;
+            justify-content: space-between;
+
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cirWrap{
+            width: 100px;
+            height: 100px;
+            display: flex;
+        }
+        .cir{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        .cirWrap1{
+            justify-content: center;
+        }
+        .cir1, .cir5{
+            align-self: center;
+        }
+        .cirWrap2{
+            justify-content: space-between;
+        }
+        .cir2, .cir4{
+            align-self: flex-start;
+        }
+        .cir3, .cir6{
+            align-self: flex-end;
+        }
+        .cirWrap3{
+            justify-content: space-between;
+        }
+        .cirWrap4, .cirWrap5{
+            flex-wrap: wrap;
+        }
+        .box4_inner{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .cir9,.cir10{
+            align-self: flex-end;
+        }
+        .box5_inner{
+            width: 100%;
+            height: 37.5%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .inner_52{
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="wrap">
+        <div class='box box1'>
+            <div class="cirWrap cirWrap1">
+                <div class="cir cir1"></div>
+            </div>
+        </div>
+
+        <div class='box box2'>
+            <div class="cirWrap cirWrap2">
+                <div class="cir cir2"></div>
+                <div class="cir cir3"></div>
+            </div>
+        </div>
+
+        <div class='box box3'>
+            <div class="cirWrap cirWrap3">
+                <div class="cir cir4"></div>
+                <div class="cir cir5"></div>
+                <div class="cir cir6"></div>
+            </div>
+        </div>
+
+        <div class='box box4'>
+            <div class="cirWrap cirWrap4">
+                <div class="box4_inner">
+                    <div class="cir cir7"></div>
+                    <div class="cir cir8"></div>
+                </div>
+                <div class="box4_inner">
+                    <div class="cir cir9"></div>
+                    <div class="cir cir10"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class='box box5'>
+            <div class="cirWrap cirWrap5">
+                <div class="box5_inner">
+                    <div class="cir cir11"></div>
+                    <div class="cir cir12"></div>
+                </div>
+                <div class="box5_inner inner_52">
+                    <div class="cir cir13"></div>
+                </div>
+                <div class="box5_inner">
+                    <div class="cir cir14"></div>
+                    <div class="cir cir15"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='box box5'>
+            <div class="cirWrap cirWrap5">
+                <div class="box5_inner">
+                    <div class="cir cir16"></div>
+                    <div class="cir cir17"></div>
+                </div>
+                <div class="box5_inner">
+                    <div class="cir cir18"></div>
+                    <div class="cir cir19"></div>
+                </div>
+                <div class="box5_inner">
+                    <div class="cir cir20"></div>
+                    <div class="cir cir21"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+</body>
+</html>
