@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #container{
+            list-style: none;
+            margin: 0 auto;
+            width: 732px;
+            background: #f0f0f0;
+            overflow: hidden;
+            padding-top: 1px;
+            padding-right: 1px;
+
+        }
+        #container > .perGrid{
+            width: 121px;
+            height: 108px;
+            float: left;
+            margin-bottom: 1px;
+            margin-left: 1px;
+            position: relative;
+        }
+        #container > .perGrid > .gridDiv{
+            width: 121px;
+            height: 108px;
+            position: relative;
+            transform-style: preserve-3d;
+            /*transition: 2s transform;*/
+        }
+        #container > .perGrid > .gridDiv > div{
+            width: 121px;
+            height: 108px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            text-align: center;
+            line-height: 108px;
+            background-color: white;
+        }
+       .back > img,.front > img{
+          vertical-align: middle;
+       }
+        /*#container > .perGrid:hover .gridDiv{
+            transform: rotateY(180deg);
+        }*/
+        /*  font背面隐藏 让back区域图片显示, 父级要开启3d空间*/
+        .front{
+            backface-visibility: hidden;
+        }
+        .back{
+            transform: rotateY(180deg);
+        }
+        #btn{
+            text-align: center;
+            line-height: 108px;
+            background-color: white;
+
+        }
+        #btn > img{
+            width: 28px;
+            height: 28px;
+        }
+        #btn > span{
+            position: absolute;
+            left: 38px;
+            top: 20px;
+        }
+     /*   #btn:hover{
+            background-color: red;
+            !* 利用这个来覆盖鼠标划入时的动画 *!
+            transition: none;
+        }*/
+
+        #refresh{
+            width: 121px;
+            height: 108px;
+            position: relative;
+        }
+        #refresh > img{
+            position: absolute;
+            left: 45px;
+            top: 35px;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="container">
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon1.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon2.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="perGrid">
+        <div class="gridDiv">
+            <div class="back">
+                <img src="img/icon45.jpg">
+            </div>
+            <div class="front">
+                <img src="img/icon46.jpg">
+            </div>
+        </div>
+    </li>
+    <li id="btn" class="perGrid">
+        <div id="refresh">
+            <img src="img/refresh-white.png" class="btn_img2">
+            <img src="img/refresh.png">
+        </div>
+        <span>换一批</span>
+    </li>
+</ul>
+
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $img = $('ul > li > .gridDiv > div > img');
+        for(var i = 1; i < $img.length+1; i++){
+            $('ul > li > .gridDiv > div ').eq(i-1).html('<img src="img/icon'+i+'.jpg">');
+        }
+        $('#btn').on('mouseenter',function () {
+            $('#btn').css('background','red');
+            $('#refresh').children('img').eq(0).css('z-index','2');
+            $('.perGrid > span').css({
+                'color':'white'
+            });
+        }).on('mouseleave',function () {
+            $('#btn').css({
+                'background':'white',
+                'transition' : '2s'
+            });
+            $('#refresh').children('img').eq(0).css('z-index','0');
+            $('.perGrid > span').css({
+                'transition' : '2s',
+                'color':'black'
+            });
+        });
+
+        var flag = true;
+        $('#btn').on('click',function () {
+            if(flag){
+                var $len = $('.gridDiv').length;
+                    var num =6;
+                    var col;
+                    var row;
+                    for(var i = 0; i < $len; i++){
+                        col = i%num;
+                        row = Math.floor(i/num);
+                        $('.gridDiv').eq(i).css({
+                            'transform': 'rotateY(180deg)',
+                            'transition' : '0.5s '+(row + col)*100+'ms'
+                        });
+                    }
+                $('#btn > #refresh> img').css({
+                    'transform': 'rotate(720deg)',
+                    'transition' : '2s'
+                });
+                flag = false;
+                console.log(flag);
+            }else if(flag === false){
+                var $len = $('.gridDiv').length;
+                var num =6;
+                var col;
+                var row;
+                for(var i = 0; i < $len; i++){
+                    col = i%num;
+                    row = Math.floor(i/num);
+                    $('.gridDiv').eq(i).css({
+                        'transform': 'rotateY(0deg)',
+                        'transition' : '0.5s '+(row + col)*100+'ms'
+                    });
+                }
+                $('#btn > #refresh > img').css({
+                    'transform': 'rotate(0deg)',
+                    'transition' : '2s'
+                });
+                flag = true;
+                console.log(flag);
+            }
+        })
+    })
+</script>
+</body>
+</html>
